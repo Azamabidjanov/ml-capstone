@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 
-def PullData():
+def pullData():
 	data = pd.read_csv('../data/songDb.tsv', sep='\t', encoding='latin-1')
 	return data
 
 def main():
-	data = PullData()
+	data = pullData()
 	print( data.head() )
 
 if __name__ == "__main__":
