@@ -1,6 +1,8 @@
 ### Machine-Learning Capstone Project.
 
-## Development Environment - Pipenv
+## Authors: Natalie Kalin, Armando Ocampo, Jay Harrison, Azam Abidjanov
+
+## Development Environment - `pipenv`
 We are using pipenv to keep our development/dependencies consistent.
 Pipenv uses Pipfile/Pipfile.lock to ensure we are using the same version
 of packages for our projects. This avoids "I swear it just worked on my machine!" type situations.
