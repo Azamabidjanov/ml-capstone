@@ -16,3 +16,11 @@ Whenever you are introducing a new package, please add it to the pipfile (instru
 
 ## Pipenv: Adding new packages
 + To add a new package (scipy for example) into the pipfile: `pipenv install scipy`
+
+## Good Attributes for Songs
+
+Good: Acousticness, Danceability, Energy, Instrumentalness, Loudness, valence, tempo
+
+Bad: Liveness (detecting live music), Speechiness (used for detecting podcasts), 
+
+https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
