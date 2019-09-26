@@ -21,6 +21,14 @@ Whenever you are introducing a new package, please add it to the pipfile (instru
 
 Good: Acousticness, Danceability, Energy, Instrumentalness, Loudness, valence, tempo
 
-Bad: Liveness (detecting live music), Speechiness (used for detecting podcasts), Key (key song is played in)
+Bad: Liveness (detecting live music), Speechiness (used for detecting podcasts), Key (key song is played in), Mode (binary value...not useful)
 
 https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
+
+## Spectral Clustering
+
+-Looked at three different characteristics with 4 different genres using Spectral Clustering
+-First, evaluated Danceability, Acousticness, and Loudness (Distinction not clear)
+-Second, evaluated Danceability, Acousticness, and Valence (much cleaner distinction)
+-Third, evaluated Danceability, Energy, and Valence (much cleaner distinction)
+-fourth, evaluated Tempo, Energy, and Valence (not great separation)
