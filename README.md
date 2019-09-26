@@ -2,6 +2,9 @@
 
 ## Authors: Natalie Kalin, Armando Ocampo, Jay Harrison, Azam Abidjanov
 
+## Dataset
+All song data originates from Spotify, however a precompiled dataset of ~80,000 songs was retrieved from https://www.kaggle.com/grasslover/spotify-music-genre-list. Credit to Adri Molina 
+
 ## Development Environment - `pipenv`
 We are using pipenv to keep our development/dependencies consistent.
 Pipenv uses Pipfile/Pipfile.lock to ensure we are using the same version
