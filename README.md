@@ -21,6 +21,6 @@ Whenever you are introducing a new package, please add it to the pipfile (instru
 
 Good: Acousticness, Danceability, Energy, Instrumentalness, Loudness, valence, tempo
 
-Bad: Liveness (detecting live music), Speechiness (used for detecting podcasts), 
+Bad: Liveness (detecting live music), Speechiness (used for detecting podcasts), Key (key song is played in)
 
 https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
