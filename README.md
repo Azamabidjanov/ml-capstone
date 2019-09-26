@@ -28,7 +28,11 @@ https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-f
 ## Spectral Clustering
 
 -Looked at three different characteristics with 4 different genres using Spectral Clustering
+
 -First, evaluated Danceability, Acousticness, and Loudness (Distinction not clear)
+
 -Second, evaluated Danceability, Acousticness, and Valence (much cleaner distinction)
+
 -Third, evaluated Danceability, Energy, and Valence (much cleaner distinction)
+
 -fourth, evaluated Tempo, Energy, and Valence (not great separation)
