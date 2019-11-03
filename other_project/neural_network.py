@@ -1,8 +1,8 @@
 import tensorflow as tf
 from tensorflow import keras
-from keras.datasets import cifar10, mnist
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
+#from keras.datasets import cifar10, mnist
+#from tensorflow.keras import Sequential
+#from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
 from pathlib import Path
 from fastai.vision import *
 import numpy as np
@@ -15,7 +15,15 @@ import os
 
 path = Path(os.getcwd())/"data"
 
+tfms = get_transforms(do_flip=True,flip_vert=True)
 data = ImageDataBunch.from_folder(path,test="test",ds_tfms=tfms,bs=16)
+
+print(data.classes)
+
+data.show_batch(rows=4,figsize=(10,8))
+plt.show()
+
+
 
 #img = cv2.imread('..\dataset_resized\dataset_resized\trash\trash2.jpg')
 #cv2.imshow('Image', img)
