@@ -42,12 +42,12 @@ https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-f
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-##Recycling Project
+# Recycling Project
 
-##Dataset
+## Dataset
 https://github.com/garythung/trashnet
 
-##Data Parsing
+## Data Parsing
 https://towardsdatascience.com/how-to-build-an-image-classifier-for-waste-sorting-6d11d3c9c478
 
 https://nbviewer.jupyter.org/github/collindching/Waste-Sorter/blob/master/Waste%20sorter.ipynb
