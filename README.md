@@ -39,3 +39,15 @@ https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-f
 -Third, evaluated Danceability, Energy, and Valence (much cleaner distinction)
 
 -fourth, evaluated Tempo, Energy, and Valence (not great separation)
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+##Recycling Project
+
+##Dataset
+https://github.com/garythung/trashnet
+
+##Data Parsing
+https://towardsdatascience.com/how-to-build-an-image-classifier-for-waste-sorting-6d11d3c9c478
+
+https://nbviewer.jupyter.org/github/collindching/Waste-Sorter/blob/master/Waste%20sorter.ipynb
