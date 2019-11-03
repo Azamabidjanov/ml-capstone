@@ -13,15 +13,30 @@ import matplotlib.pyplot as plt
 import cv2
 import os
 
+# path for data folders
 path = Path(os.getcwd())/"data"
 
+# load data using fastai method
 tfms = get_transforms(do_flip=True,flip_vert=True)
 data = ImageDataBunch.from_folder(path,test="test",ds_tfms=tfms,bs=16)
 
-print(data.classes)
+# show data and labels
+#data.show_batch(rows=4,figsize=(10,8))
+#plt.show()
 
-data.show_batch(rows=4,figsize=(10,8))
+# CNN model
+learn = create_cnn(data,models.resnet34,metrics=error_rate)
+
+# Show error
+learn.lr_find(start_lr=1e-6,end_lr=1e1)
+learn.recorder.plot()
 plt.show()
+
+#learn.fit_one_cycle(20,max_lr=5.13e-03) ->run 20 epoches, at 8.6%, validation errors looks best
+
+
+
+
 
 
 
