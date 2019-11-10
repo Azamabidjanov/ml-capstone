@@ -34,7 +34,7 @@ my_layers = [
     MaxPooling2D(pool_size=(2,2)),
     Dropout(0.2),
     Flatten(),
-    Dense(128, activation="relu"),
+    Dense(10, activation="relu"),
     Dropout(0.2),
     Dense(num_classes, activation="softmax") # Number of classes as output units
 ]
@@ -43,13 +43,13 @@ model = Sequential(my_layers)
 
 model.compile(loss='categorical_crossentropy',optimizer="adam", metrics=['accuracy'])
 
-model.fit(x_train, y_train, epochs=10, validation_split=0.2)
+model.fit(x_train, y_train, epochs=2, validation_split=0.2)
 
 scores = model.evaluate(x_test, y_test)
 print(f"Our model is able to predict with an accuracy of {scores[1]:.2f}.")
 
-model.save("models/keras-mnist.h5")
+model.save("keras-mnist.h5")
 
-loaded_model = load_model("models/keras-mnist.h5")
+loaded_model = load_model("keras-mnist.h5")
 loaded_model_scores = loaded_model.evaluate(x_test, y_test)
 print(f"Our loaded model is able to predict with an accuracy of {loaded_model_scores[1]:.2f}.")

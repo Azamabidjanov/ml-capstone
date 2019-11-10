@@ -27,10 +27,12 @@ data = ImageDataBunch.from_folder(path,test="test",ds_tfms=tfms,bs=16)
 # CNN model
 learn = create_cnn(data,models.resnet34,metrics=error_rate)
 
+learn.save("keras-recycle")
+
 # Show error
-learn.lr_find(start_lr=1e-6,end_lr=1e1)
-learn.recorder.plot()
-plt.show()
+#learn.lr_find(start_lr=1e-6,end_lr=1e1)
+#learn.recorder.plot()
+#plt.show()
 
 #learn.fit_one_cycle(20,max_lr=5.13e-03) ->run 20 epoches, at 8.6%, validation errors looks best
 
