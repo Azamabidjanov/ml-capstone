@@ -51,3 +51,7 @@ https://github.com/garythung/trashnet
 https://towardsdatascience.com/how-to-build-an-image-classifier-for-waste-sorting-6d11d3c9c478
 
 https://nbviewer.jupyter.org/github/collindching/Waste-Sorter/blob/master/Waste%20sorter.ipynb
+
+## Saad's Website Intro Code
+
+https://github.com/minds-mines/intro-ml-code-samples/tree/complete
