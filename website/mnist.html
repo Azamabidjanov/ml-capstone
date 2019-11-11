@@ -12,7 +12,7 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:30px;
+	font-size:50px;
 	font-weight:bold;
 	padding:6px 12px;
 	text-decoration:none;
@@ -25,9 +25,15 @@
 	position:relative;
 	top:1px;
 }
+.bordered {
+    width: 180px;
+    height: auto;
+    padding: 13px;
+    border: 1px dashed green;
+}
 </style>
 <head>
-	<center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=180 HEIGHT=90></center>
+	<center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=540 HEIGHT=270></center>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recyclable Products Predictor</title>
@@ -36,12 +42,17 @@
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
-    <center><h1>Recyclable Products Predictor</h1></center>
-	
+	<br/>
+	<center><font size="+200">Recyclable Products Predictor</font><center>
+    <!-- <center><h1>Recyclable Products Predictor</h1></center> -->
+	<br/>
+    <br/>
     <center>
     <div>
+    	<div class="bordered">
     	<label for="image_upload"></label>
         <input type="file" id="image_upload">
+        </div>
     </div>
     <br/>
     <img id="my_img" alt="Uploaded image" width="112" height="112" />
