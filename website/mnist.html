@@ -4,26 +4,26 @@
 <style>
 /*https://www.bestcssbuttongenerator.com/#/15*/
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #9acc85;
-	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
-	background-color:#74ad5a;
-	border:1px solid #3b6e22;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:50px;
-	font-weight:bold;
-	padding:6px 12px;
-	text-decoration:none;
+    box-shadow:inset 0px 1px 0px 0px #9acc85;
+    background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+    background-color:#74ad5a;
+    border:1px solid #3b6e22;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:50px;
+    font-weight:bold;
+    padding:6px 12px;
+    text-decoration:none;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
-	background-color:#68a54b;
+    background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+    background-color:#68a54b;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+    position:relative;
+    top:1px;
 }
 .bordered {
     width: 180px;
@@ -33,7 +33,8 @@
 }
 </style>
 <head>
-	<center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=540 HEIGHT=270></center>
+	<br/>
+    <center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=540 HEIGHT=270></center>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recyclable Products Predictor</title>
@@ -42,15 +43,15 @@
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
-	<br/>
-	<center><font size="+200">Recyclable Products Predictor</font><center>
+    <br/>
+    <center><font size="+200">Recyclable Products Predictor</font><center>
     <!-- <center><h1>Recyclable Products Predictor</h1></center> -->
-	<br/>
+    <br/>
     <br/>
     <center>
     <div>
-    	<div class="bordered">
-    	<label for="image_upload"></label>
+        <div class="bordered">
+        <label for="image_upload"></label>
         <input type="file" id="image_upload">
         </div>
     </div>
@@ -64,11 +65,11 @@
         <a href="#" id="predictor" class="myButton">Predict</a>
         <!-- <button id="predictor">Predict</button> -->
     </div>
-    
-    
+
+
     <p id="message"></p>
     </center>
-    
+
     <script>
     document.querySelector("#image_upload").addEventListener("change", (e)=>{
         // https://stackoverflow.com/a/27002935/818687 
@@ -94,7 +95,7 @@
             document.querySelector("#message").innerText = res['message']
         })
     })
-	</script>
+    </script>
     
 </body>
 </html>
