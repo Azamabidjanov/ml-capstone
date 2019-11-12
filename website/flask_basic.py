@@ -1,4 +1,5 @@
-"""Flask application to run recycle model
+"""
+Flask application to run recycle model
 """
 from flask import Flask, jsonify, request, render_template
 from keras.models import load_model
@@ -24,61 +25,30 @@ def load_recycle_model():
     # build and compile on GPU
     recycle_model._make_predict_function()
 
-# @app.route("/")
-# def hello():
-#     return "Hello World!"
+@app.route("/recycle", methods=["POST"])
+def recycle_predict():
+    try:
+        image =  request.files['file'].read()
+        print("Got image")
+        # https://stackoverflow.com/a/27537664/818687
+        arr = cv2.imdecode(np.fromstring(image, np.uint8), cv2.IMREAD_UNCHANGED)
+        print("CV2 read image")
+        my_image = arr / 255.0
+        my_images = my_image.reshape(1, 28, 28, 1)
+        print("Got here")
 
-# @app.route("/json")
-# def json_endpoint():
-#     return jsonify({
-#         "message": "Hello World!"
-#     })
-
-
-# @app.route("/variables/<variable>")
-# def example_variable(variable):
-#     return jsonify({
-#         "message": f"The variable you entered is {variable}"
-#     })
-
-# @app.route("/request-args")
-# def example_request_args():
-#     try:
-#         a = request.args["a"]
-#         b = request.args["b"]
-#         c = request.args["c"]
-#         return jsonify({
-#             "message": f"You entered a = {a}, b= {b} and c= {c}."
-#         })
-#     except:
-#         return jsonify({
-#             "message": f"You did not provide one of a, b, or c."
-#         })
-
-# @app.route("/recycle", methods=["POST"])
-# def recycle_predict():
-#     try:
-#         image =  request.files['file'].read()
-#         print("Got image")
-#         # https://stackoverflow.com/a/27537664/818687
-#         arr = cv2.imdecode(np.fromstring(image, np.uint8), cv2.IMREAD_UNCHANGED)
-#         print("CV2 read image")
-#         my_image = arr / 255.0
-#         my_images = my_image.reshape(1, 28, 28, 1)
-#         print("Got here")
-
-#         pred = recycle_model.predict(my_images)
-#         n = int(np.argmax(pred))
-#         print(n)
-#         return jsonify({
-#             "message": f"The predicted object for the uploaded image is {n} ",
-#             "number": n
-#         })
-#     except Exception as e:
-#         print(traceback.format_exc())
-#         return jsonify({
-#             "message": f"An error occurred. {e}"
-#         })
+        pred = recycle_model.predict(my_images)
+        n = int(np.argmax(pred))
+        print(n)
+        return jsonify({
+            "message": f"The predicted object for the uploaded image is {n} ",
+            "number": n
+        })
+    except Exception as e:
+        print(traceback.format_exc())
+        return jsonify({
+            "message": f"An error occurred. {e}"
+        })
 
 @app.route("/recycle-ui")
 def recycle_ui():
