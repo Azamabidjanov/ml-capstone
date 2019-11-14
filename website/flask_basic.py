@@ -2,8 +2,8 @@
 Flask application to run recycle model
 """
 from flask import Flask, jsonify, request, render_template
-from keras.models import load_model
-from keras.backend import clear_session
+from tensorflow.keras.models import load_model
+from tensorflow.keras.backend import clear_session
 import numpy as np
 import joblib
 import cv2
@@ -12,14 +12,14 @@ import os
 from pathlib import Path
 
 clear_session()
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 recycle_model = None
 
 def load_recycle_model():
     global recycle_model
-    #path = Path(os.getcwd())/"data"
+    path = Path(os.getcwd())
     #model_file = f'{path}/models/keras-recycle.pth'
-    model_file = 'keras-mnist.h5'
+    model_file = '../keras-mnist.h5'
     # Loads from h5 file
     recycle_model = load_model(model_file)
     # build and compile on GPU
