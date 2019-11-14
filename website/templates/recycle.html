@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html>
+<body background="https://www.toptal.com/designers/subtlepatterns/patterns/leaves-pattern.png">
+<style>
+/*https://www.bestcssbuttongenerator.com/#/15*/
+.myButton {
+    box-shadow:inset 0px 1px 0px 0px #9acc85;
+    background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+    background-color:#74ad5a;
+    border:1px solid #3b6e22;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:50px;
+    font-weight:bold;
+    padding:6px 12px;
+    text-decoration:none;
+}
+.myButton:hover {
+    background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+    background-color:#68a54b;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+.bordered {
+    width: 180px;
+    height: auto;
+    padding: 13px;
+    border: 1px dashed green;
+}
+</style>
 <head>
+	<br/>
+    <center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=540 HEIGHT=270></center>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Digit Predictor</title>
+    <title>Recyclable Products Predictor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
-    <h1>Digit Predictor</h1>
-
+    <br/>
+    <center><font size="+200">Recyclable Products Predictor</font><center>
+    <!-- <center><h1>Recyclable Products Predictor</h1></center> -->
+    <br/>
+    <br/>
+    <center>
     <div>
-        <label for="image_upload">Uploaded image</label>
+        <div class="bordered">
+        <label for="image_upload"></label>
         <input type="file" id="image_upload">
+        </div>
     </div>
-
-    <div>
-        <button id="predictor">Predict Number!</button>
-    </div>
-
+    <br/>
     <img id="my_img" alt="Uploaded image" width="112" height="112" />
+    <br/>
+    <br/>
+    <br/>
+    <div>
+        <label for="predictor"></label>
+        <a href="#" id="predictor" class="myButton">Predict</a>
+        <!-- <button id="predictor">Predict</button> -->
+    </div>
 
-    
+
     <p id="message"></p>
-    
-    <script>
+    </center>
 
+    <script>
     document.querySelector("#image_upload").addEventListener("change", (e)=>{
         // https://stackoverflow.com/a/27002935/818687 
         document.querySelector('#my_img').src = window.URL.createObjectURL(e.target.files[0])
     })
-
     document.querySelector("#predictor").addEventListener("click", ()=>{
         // Get the values to send to the API
         
@@ -52,8 +95,7 @@
             document.querySelector("#message").innerText = res['message']
         })
     })
-
-</script>
+    </script>
     
 </body>
 </html>
