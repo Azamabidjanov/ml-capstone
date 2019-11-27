@@ -30,3 +30,14 @@ Whenever you are introducing a new package, please add it to the pipfile (instru
 
 ## Pipenv: Adding new packages
 + To add a new package (scipy for example) into the pipfile: `pipenv install scipy`
+
+## Fastai Installation (In Pipenv shell)
+To run the code that trains a fastai based classifier, please follow steps below after setting your environment with pipenv.
++ fastai is based on PyTorch, so we need to install pytorch first.
+  + In the pipenv shell, run the pip command for your system: https://pytorch.org/get-started/locally/
++ Once Pytorch is installed, install fastai: `pip install fastai`
+  + If running Windows & MS Visual Studio, you may experience a "io.h No such file or directory" error
+  + Fix: https://stackoverflow.com/a/50210015
++ (Optional) If experiencing RAM shortage issues or want to use the GPU(nvidia)
+  + Check if PyTorch will use the GPU. In python shell, after importing torch, run `torch.cuda.is_available()`
+  + If false, check the cuda version `torch.version.cuda`. Then, check if your graphics card driver is compatible: https://docs.nvidia.com/deploy/cuda-compatibility/index.html#binary-compatibility__table-toolkit-driver. Update your driver if necessary.  
