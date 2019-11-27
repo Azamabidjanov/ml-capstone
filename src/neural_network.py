@@ -41,6 +41,7 @@ def run():
     #plt.show()
 
     learn.fit_one_cycle(20,max_lr=5.13e-03) #->run 20 epoches, at 8.6%, validation errors looks best
+    learn.export('recycle-fastai.pkl')
 
     #img = cv2.imread('..\dataset_resized\dataset_resized\trash\trash2.jpg')
     #cv2.imshow('Image', img)
