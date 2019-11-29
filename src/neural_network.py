@@ -20,38 +20,46 @@ def run():
     # path for data folders
     path = Path(os.getcwd())/"data"
 
-    # load data using fastai method
+    print(path)
+
+    # Augment data. Compare results by flipping images horizontally and vertically
     tfms = get_transforms(do_flip=True,flip_vert=True)
 
     # num_workers = 0 part is necessary on Windows to avoid broken pipe error
-    data = ImageDataBunch.from_folder(path,test="test",ds_tfms=tfms,bs=16, num_workers = 0)
+    data = ImageDataBunch.from_folder(path,test="test",ds_tfms=tfms,bs=16)
 
     # show data and labels
-    #data.show_batch(rows=4,figsize=(10,8))
-    #plt.show()
+    # data.show_batch(rows=4,figsize=(10,8))
+    # plt.show()
 
-    # CNN model
+    # CNN model using ReseNet34
     learn = cnn_learner(data,models.resnet34,metrics=error_rate)
-
-    #learn.save("keras-recycle-fastai")
 
     # Show error
     #learn.lr_find(start_lr=1e-6,end_lr=1e1)
     #learn.recorder.plot()
     #plt.show()
 
+    # Run on 20 epochs
     learn.fit_one_cycle(20,max_lr=5.13e-03) #->run 20 epoches, at 8.6%, validation errors looks best
+    # Export to pkl file
     learn.export('recycle-fastai.pkl')
 
-    #img = cv2.imread('..\dataset_resized\dataset_resized\trash\trash2.jpg')
-    #cv2.imshow('Image', img)
-    #cv2.waitKey()
-    #(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-    #example = x_train[0]
+    # Visualizing most incorrect images
+    interp = ClassificationInterpretation.from_learner(learn)
+    losses,idxs = interp.top_losses()
+    interp.plot_top_losses(9, figsize=(15,11))
+    plt.show()
 
-    #plt.imshow(example, cmap="gray", vmin=0, vmax=255)
-    #plt.show()
+    # show confusion matrix
+    doc(interp.plot_top_losses)
+    interp.plot_confusion_matrix(figsize=(12,12), dpi=60)
+    plt.show()
+
+    # List of most confused images
+    interp.most_confused(min_val=2)
+
 
 if __name__ == '__main__':
     run()
