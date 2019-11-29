@@ -12,7 +12,7 @@
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
-    font-size:50px;
+    font-size:30px;
     font-weight:bold;
     padding:6px 12px;
     text-decoration:none;
@@ -31,10 +31,15 @@
     padding: 13px;
     border: 1px dashed green;
 }
+
+.category img {
+    opacity: 0.1;
+}
+
 </style>
 <head>
 	<br/>
-    <center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=540 HEIGHT=270></center>
+    <center><IMG SRC="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Recycle_Rush.svg/1200px-Recycle_Rush.svg.png" ALT="logo" WIDTH=400 HEIGHT=200></center>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recyclable Products Predictor</title>
@@ -44,7 +49,7 @@
 </head>
 <body>
     <br/>
-    <center><font size="+200">Recyclable Products Predictor</font><center>
+    <!-- <center><font size="+200">Recyclable Products Predictor</font><center></center> -->
     <!-- <center><h1>Recyclable Products Predictor</h1></center> -->
     <br/>
     <br/>
@@ -56,7 +61,7 @@
         </div>
     </div>
     <br/>
-    <img id="my_img" alt="Uploaded image" width="112" height="112" />
+        <img id="my_img" alt="Uploaded image" width="256" height="192" />
     <br/>
     <br/>
     <br/>
@@ -66,11 +71,22 @@
         <!-- <button id="predictor">Predict</button> -->
     </div>
 
-
     <p id="message"></p>
-    </center>
+    <div class="category">
+        <img id="metal" src="https://i.imgur.com/VdnruaN.png" alt="Metal" width="200" height="200">
+        <img id="plastic" src="https://i.imgur.com/JGxKAc9.png" alt="Plastic" width="200" height="200">
+        <img id="paper" src="https://i.imgur.com/nGkSXDw.png" alt="Paper" width="200" height="200">
+        <img id="glass" src="https://i.imgur.com/7p40Gd4.png" alt="Glass" width="200" height="200">
+        <img id="cardboard" src="https://i.imgur.com/2addkkm.png" alt="Cardboard" width="200" height="200">
+        <img id="trash" src="https://i.imgur.com/rwzwJaF.png" alt="Trash" width="200" height="200">
+    </div>
 
+
+    </center>
+    
+    
     <script>
+        
     document.querySelector("#image_upload").addEventListener("change", (e)=>{
         // https://stackoverflow.com/a/27002935/818687 
         document.querySelector('#my_img').src = window.URL.createObjectURL(e.target.files[0])
@@ -92,7 +108,35 @@
         }).then((res)=>{
             console.log(res)
             // Update the message
-            document.querySelector("#message").innerText = res['message']
+            //document.querySelector("#message").innerText = res['message']
+            document.querySelector("#message").style.fontSize = "xx-large"
+
+            document.querySelector("#cardboard").style.opacity = 0.1
+            document.querySelector("#metal").style.opacity = 0.1
+            document.querySelector("#glass").style.opacity = 0.1
+            document.querySelector("#paper").style.opacity = 0.1
+            document.querySelector("#plastic").style.opacity = 0.1
+            document.querySelector("#trash").style.opacity = 0.1
+
+            if( res['class'] == 'cardboard' ){
+                document.querySelector("#cardboard").style.opacity = 1
+            }
+            else if( res['class'] == 'metal' ){
+                document.querySelector("#metal").style.opacity = 1
+            }
+            else if( res['class'] == 'glass' ){
+                document.querySelector("#glass").style.opacity = 1
+            }
+            else if( res['class'] == 'paper' ){
+                document.querySelector("#paper").style.opacity = 1
+            }
+            else if( res['class'] == 'plastic' ){
+                document.querySelector("#plastic").style.opacity = 1
+            }
+            else{
+                document.querySelector("#trash").style.opacity = 1
+            }
+           
         })
     })
     </script>
