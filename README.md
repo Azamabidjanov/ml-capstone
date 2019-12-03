@@ -4,6 +4,10 @@
 
 # Recycling Project
 
+## Summary
+
+We designed and implemented a project that uses a CNN to classify goods as recyclable (paper, plastic, metal, glass, cardboard) or as trash.
+
 ## Dataset
 https://github.com/garythung/trashnet
 
