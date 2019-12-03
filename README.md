@@ -1,12 +1,10 @@
-# Machine-Learning Capstone Project.
+# Machine-Learning Capstone Project: Recycle Rush
 
 ## Authors: Natalie Kalin, Armando Ocampo, Jay Harrison, Azam Abidjanov
 
-# Recycling Project
-
 ## Summary
 
-We designed and implemented a project that uses a CNN to classify goods as recyclable (paper, plastic, metal, glass, cardboard) or as trash.
+We designed and implemented a project that uses a CNN to classify goods as recyclable (paper, plastic, metal, glass, cardboard) or as trash. We ended up achieving an accuracy of approximately 92% using a FastAI transfer learning model, and 40% with a model we trained from scratch. Though this is a proof-of-concept in the form of a website, this would ultimately be useful on a factory line that could help determine goods that are actually recyclable vs. trash.  
 
 ## Dataset
 https://github.com/garythung/trashnet
